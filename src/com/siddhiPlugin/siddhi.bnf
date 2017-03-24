@@ -1,0 +1,22 @@
+{
+  parserClass="com.siddhiPlugin.parser.SiddhiParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Siddhi"
+  psiImplClassSuffix="Impl"
+  psiPackage="com.siddhiPlugin.psi"
+  psiImplPackage="com.siddhiPlugin.psi.impl"
+
+  elementTypeHolderClass="com.siddhiPlugin.psi.SiddhiTypes"
+  elementTypeClass="com.siddhiPlugin.psi.SiddhiElementType"
+  tokenTypeClass="com.siddhiPlugin.psi.SiddhiTokenType"
+
+  psiImplUtilClass="com.siddhiPlugin.psi.impl.SiddhiPsiImplUtil"
+}
+
+simpleFile ::= item_*
+
+property ::= (KEY SEPARATOR VALUE?)|KEY
+
+private item_ ::= (property|COMMENT|CRLF)
